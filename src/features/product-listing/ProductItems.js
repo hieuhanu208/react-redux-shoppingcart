@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap';
+
+
+
+
 
 export default class ProductItems extends Component {
 
   render() {
-    const ItemInCart = this.props.cart.filter(item => item.id === this.props.product.id)[0]
+      const {product} = this.props;
     return (
       <div className='product-list-item'>
-        <h3>{this.props.product.name}</h3>
-        <img height={100} title={this.props.product.name} src={`/products/${this.props.product.image}`} ></img>
-        <div>{this.props.product.description}</div>
-        <div>${this.props.product.price}</div>
-        <button onClick={()=>this.props.addToCart(this.props.product)}>Add to cart({(ItemInCart && ItemInCart.quantity||0)})</button>
+          <Card>
+              <CardImg height={150} src={product.image} alt="Card image cap" />
+              <CardBody>
+                  <CardTitle>{product.name}</CardTitle>
+                  <CardSubtitle>${product.price}</CardSubtitle>
+                  <CardText>{product.description}</CardText>
+                  <Button color="primary" onClick={()=>this.onAddToCart(product)}>Add to cart</Button>{' '}
+              </CardBody>
+          </Card>
+
       </div>
     )
+  }
+  onAddToCart = (product) => {
+      this.props.onAddToCart(product);
   }
 }

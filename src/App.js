@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import Router from './Router'
 
+
 const Navigation = props => (
   <nav>
     <ul>
@@ -16,11 +17,10 @@ const Navigation = props => (
 )
 
 class App extends Component {
-  render () {
+    render () {
     return (
       <div className='page-container'>
         <Navigation />
-
         <Router />
       </div>
     )
