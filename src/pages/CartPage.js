@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CartItem from "../features/cart/CartItem";
 import CartContainer from "../containers/CartContainer";
 
 export default class CartPage extends Component {

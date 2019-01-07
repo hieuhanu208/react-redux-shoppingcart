@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import Router from './Router'
+import cart from './features/cart/Cart'
 
 
 const Navigation = props => (
+  
   <nav>
     <ul>
       <li>
